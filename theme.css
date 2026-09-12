@@ -1,0 +1,14 @@
+/* The photo logo stays available while scrolling through every section. */
+.site-header { position: fixed; top: 0; background: rgba(8,17,31,.72); border-bottom: 1px solid rgba(201,219,241,.08); backdrop-filter: blur(14px); transition: background .25s ease, border-color .25s ease; }
+.theme-toggle { display: inline-flex; align-items: center; gap: 7px; margin-left: auto; margin-right: 13px; padding: 8px 11px; color: #cde2fc; border: 1px solid rgba(201,219,241,.18); border-radius: 5px; background: rgba(24,49,80,.42); font: 11px Manrope,sans-serif; cursor: pointer; }
+.theme-icon { color: #89caff; font-size: 16px; line-height: 1; }
+body.light-mode { background: #eaf3ff; color: #10213a; }
+body.light-mode .site-header { background: rgba(239,247,255,.78); border-bottom-color: rgba(31,75,123,.12); }
+body.light-mode .nav-links a { color: #526b89; } body.light-mode .nav-links .active,body.light-mode .nav-links a:hover { color: #10213a; }
+body.light-mode .header-cta,body.light-mode .theme-toggle { color: #17385d; border-color: rgba(31,75,123,.22); background: rgba(255,255,255,.55); } body.light-mode .theme-icon { color: #2166a8; }
+body.light-mode .hero { background: radial-gradient(circle at 78% 38%,#b6d8ff 0,rgba(212,232,255,.8) 22%,transparent 48%),linear-gradient(115deg,#e9f4ff 20%,#c9e1fa 100%); }
+body.light-mode .intro-banner { color: #eaf5ff; background: rgba(8,19,35,.92); } body.light-mode .intro-prefix { color: #eaf5ff; }
+body.light-mode .about,body.light-mode .projects { background: #f6faff; } body.light-mode .skills { background: #e7f2ff; } body.light-mode .section { border-color: rgba(31,75,123,.14); }
+body.light-mode .large-copy,body.light-mode h2,body.light-mode h3 { color: #10213a; } body.light-mode .section-label,body.light-mode .about-detail p,body.light-mode .project-meta p,body.light-mode .stats span { color: #5d728d; }
+body.light-mode .stats { border-color: rgba(31,75,123,.16); } body.light-mode .stats b { color: #22548a; } body.light-mode .skill-tags span { color: #31557c; border-color: rgba(31,75,123,.2); } body.light-mode .contact { background: #2d6ca8; }
+@media (max-width:800px) { .theme-toggle { margin-left: auto; margin-right: 10px; } .theme-label { display: none; } }

@@ -13,6 +13,20 @@ const observer = new IntersectionObserver(entries => entries.forEach(entry => {
 }), { rootMargin: '-35% 0px -55% 0px' });
 sections.forEach(section => observer.observe(section));
 
+const themeToggle = document.querySelector('.theme-toggle');
+const setTheme = (light) => {
+  document.body.classList.toggle('light-mode', light);
+  themeToggle?.setAttribute('aria-pressed', light);
+  themeToggle?.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
+  if (themeToggle) {
+    themeToggle.querySelector('.theme-icon').textContent = light ? '◐' : '☼';
+    themeToggle.querySelector('.theme-label').textContent = light ? 'Dark' : 'Light';
+  }
+  localStorage.setItem('sujan-theme', light ? 'light' : 'dark');
+};
+setTheme(localStorage.getItem('sujan-theme') === 'light');
+themeToggle?.addEventListener('click', () => setTheme(!document.body.classList.contains('light-mode')));
+
 const intro = document.querySelector('.intro-banner');
 if (intro) {
   const text = intro.querySelector('.intro-text');
