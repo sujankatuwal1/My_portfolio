@@ -32,6 +32,46 @@
 
 .code-window { z-index: 1; }
 
+/* A clean, photo-first home screen. */
+.hero {
+  min-height: 720px;
+  padding: 0;
+  display: block;
+}
+
+.hero-visual {
+  left: 50%;
+  right: auto;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portrait-ring {
+  width: 270px;
+  height: 270px;
+}
+
+.intro-banner {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: calc(50% + 190px);
+  width: min(900px, calc(100% - 48px));
+  transform: translateX(-50%);
+  padding: 18px 28px;
+  color: #e8f4ff;
+  background: rgba(0, 0, 0, .82);
+  border: 1px solid rgba(129, 196, 255, .34);
+  border-radius: 4px;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .32);
+  text-align: center;
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(11px, 1.3vw, 15px);
+  letter-spacing: .3px;
+}
+
 @media (max-width: 800px) {
-  .portrait-ring { width: 205px; height: 205px; }
+  .hero-visual { transform: translate(-50%, -50%) scale(.8); }
+  .portrait-ring { width: 230px; height: 230px; }
+  .intro-banner { top: calc(50% + 158px); line-height: 1.65; }
 }
