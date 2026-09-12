@@ -68,7 +68,18 @@
   font-family: 'DM Mono', monospace;
   font-size: clamp(11px, 1.3vw, 15px);
   letter-spacing: .3px;
+  min-height: 55px;
 }
+
+.intro-banner::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 3px;
+  color: #74cfff;
+  animation: blink .8s step-end infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
 
 @media (max-width: 800px) {
   .hero-visual { transform: translate(-50%, -50%) scale(.8); }
