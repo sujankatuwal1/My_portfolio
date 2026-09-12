@@ -105,12 +105,12 @@
   color: #8fd7ff;
   font-weight: 800;
   white-space: nowrap;
-  animation: rise-role 3.8s cubic-bezier(.22,.61,.36,1) both;
+  animation: rise-role 2.55s cubic-bezier(.22,.61,.36,1) both;
 }
 
 @keyframes rise-role {
   0% { opacity: 0; transform: translateY(130%); }
-  18%, 70% { opacity: 1; transform: translateY(0); }
+  16%, 74% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-130%); }
 }
 

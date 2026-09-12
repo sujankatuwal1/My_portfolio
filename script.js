@@ -43,7 +43,7 @@ if (intro) {
         word.textContent = role;
         stage.append(word);
         text.replaceChildren(prefix, stage);
-        await pause(3800);
+        await pause(2550);
       }
     }
   };
