@@ -81,8 +81,48 @@
 
 @keyframes blink { 50% { opacity: 0; } }
 
+.intro-text { font-weight: 500; }
+
+.intro-prefix {
+  color: #e8f4ff;
+  font-weight: 500;
+}
+
+.role-stage {
+  position: relative;
+  display: inline-block;
+  min-width: 12ch;
+  height: 1.5em;
+  overflow: hidden;
+  vertical-align: bottom;
+  text-align: left;
+}
+
+.role-word {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #8fd7ff;
+  font-weight: 800;
+  white-space: nowrap;
+  animation: rise-role 3.8s cubic-bezier(.22,.61,.36,1) both;
+}
+
+@keyframes rise-role {
+  0% { opacity: 0; transform: translateY(130%); }
+  18%, 70% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-130%); }
+}
+
 @media (max-width: 800px) {
   .hero-visual { transform: translate(-50%, -50%) scale(.8); }
   .portrait-ring { width: 230px; height: 230px; }
   .intro-banner { top: calc(50% + 158px); line-height: 1.65; }
+  .role-stage { min-width: 0; width: 100%; display: block; text-align: center; }
+  .role-word { left: 50%; transform: translateX(-50%); }
+  @keyframes rise-role {
+    0% { opacity: 0; transform: translate(-50%, 130%); }
+    18%, 70% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -130%); }
+  }
 }
