@@ -13,20 +13,6 @@ const observer = new IntersectionObserver(entries => entries.forEach(entry => {
 }), { rootMargin: '-35% 0px -55% 0px' });
 sections.forEach(section => observer.observe(section));
 
-const themeToggle = document.querySelector('.theme-toggle');
-const setTheme = (light) => {
-  document.body.classList.toggle('light-mode', light);
-  themeToggle?.setAttribute('aria-pressed', light);
-  themeToggle?.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
-  if (themeToggle) {
-    themeToggle.querySelector('.theme-icon').textContent = light ? '◐' : '☼';
-    themeToggle.querySelector('.theme-label').textContent = light ? 'Dark' : 'Light';
-  }
-  localStorage.setItem('sujan-theme', light ? 'light' : 'dark');
-};
-setTheme(localStorage.getItem('sujan-theme') === 'light');
-themeToggle?.addEventListener('click', () => setTheme(!document.body.classList.contains('light-mode')));
-
 const intro = document.querySelector('.intro-banner');
 if (intro) {
   const text = intro.querySelector('.intro-text');
@@ -70,5 +56,36 @@ if (intro) {
     await type("I'm ");
     await pause(550);
     await showRoles();
+  })();
+}
+
+const contact = document.querySelector('.contact-banner');
+if (contact) {
+  const text = contact.querySelector('.contact-text');
+  const pause = (time) => new Promise(resolve => setTimeout(resolve, time));
+  const type = async (words, speed = 85) => {
+    for (const letter of words) {
+      text.textContent += letter;
+      await pause(speed);
+    }
+  };
+  const erase = async (speed = 65) => {
+    while (text.textContent.length) {
+      text.textContent = text.textContent.slice(0, -1);
+      await pause(speed);
+    }
+  };
+  (async () => {
+    await pause(900);
+    while (true) {
+      await type('Do you have any projects in mind?');
+      await pause(1900);
+      await erase();
+      await pause(600);
+      await type("Let’s work together");
+      await pause(2200);
+      await erase();
+      await pause(700);
+    }
   })();
 }

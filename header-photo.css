@@ -9,6 +9,15 @@
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
+/* Keep the navigation available without the removed theme controls. */
+.site-header {
+  position: fixed;
+  top: 0;
+  background: rgba(8, 17, 31, .72);
+  border-bottom: 1px solid rgba(201, 219, 241, .08);
+  backdrop-filter: blur(14px);
+}
+
 .profile-logo:hover {
   transform: scale(1.07);
   box-shadow: 0 0 0 6px rgba(121, 201, 255, .18);
